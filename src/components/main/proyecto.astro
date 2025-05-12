@@ -1,0 +1,171 @@
+---
+const { proyect, lang } = Astro.props;
+const goto = `/${lang.code}${proyect.url}`;
+const imgreact = "/react-svgrepo-com.svg";
+const imgastro = "/astro-svgrepo-com.svg";
+const imgjs = "/js-svgrepo-com.svg";
+const imgtailwind = "/tailwind-svgrepo-com.svg";
+const imgnext = "/nextjs-fill-svgrepo-com.svg";
+const imgpython = "/python-svgrepo-com.svg";
+const imghtml = "/html-5-svgrepo-com.svg";
+---
+
+<div
+  class="rounded-[4px] font-bold flex flex-col md:flex-row md:justify-between items-center md:w-full md:h-60 p-2 mt-2 w-[90%] min-h-40 dark:text-black text-white dark:bg-slate-300 bg-neutral-800"
+>
+  <div class="flex flex-col text-center items-center md:pl-5">
+    <h1 class="text-3xl">{proyect.title}</h1>
+    <div class="md:flex hidden flex-col items-center">
+      <h2>{lang.main.proyects.tecnologiestraduction} :</h2>
+      <div
+        class="flex flex-row flex-wrap md:max-w-[200px] lg:max-w-[300px] justify-center gap-2"
+      >
+        {
+          proyect.technologys.map((item: any, key: number) => {
+            if (item === "React") {
+              return (
+                <img
+                  class="h-10 w-10 hover:scale-110 transition-all"
+                  src={imgreact}
+                />
+              );
+            }
+            if (item === "Astro") {
+              return (
+                <img
+                  class="h-10 w-10 hover:scale-110 transition-all"
+                  src={imgastro}
+                />
+              );
+            }
+            if (item === "JS") {
+              return (
+                <img
+                  class="h-10 w-10 hover:scale-110 transition-all"
+                  src={imgjs}
+                />
+              );
+            }
+            if (item === "Tailwind") {
+              return (
+                <img
+                  class="h-10 w-10 hover:scale-110 transition-all"
+                  src={imgtailwind}
+                />
+              );
+            }
+            if (item === "Next") {
+              return (
+                <img
+                  class="h-10 w-10 hover:scale-110 transition-all"
+                  src={imgnext}
+                />
+              );
+            }
+            if (item === "Python") {
+              return (
+                <img
+                  class="h-10 w-10 hover:scale-110 transition-all"
+                  src={imgpython}
+                />
+              );
+            }
+            return null;
+          })
+        }
+      </div>
+      <a
+        href={`/${lang.code}${proyect.url}`}
+        class="text-cyan-600 pt-4 underline">Saber más</a
+      >
+    </div>
+  </div>
+  <div class="md:h-[100%] h-[200px] pt-4 md:pt-0 max-w-[380px] relative">
+    <!-- Imagen principal -->
+    <img
+      src={proyect.urlimg}
+      alt={proyect.title}
+      id={"idimg " + goto}
+      class="rounded-[4px] h-full w-full object-cover"
+    />
+    <!-- Imagen estática que se oculta al hacer hover -->
+    <img
+      src={proyect.urlimgstatic}
+      class="absolute top-0 left-0 h-full w-full object-cover transition-opacity duration-300 opacity-100 hover:opacity-0 rounded-[4px]"
+      alt={proyect.title}
+    />
+  </div>
+
+  <div class="md:hidden flex flex-col items-center">
+    <h2>{lang.main.proyects.tecnologiestraduction} :</h2>
+    <div class="flex-row flex flex-wrap max-w-[250px] justify-center gap-2">
+      {
+        proyect.technologys.map((item: any, key: number) => {
+          if (item === "React") {
+            return (
+              <img
+                class="h-10 w-10 hover:scale-110 transition-all"
+                src={imgreact}
+              />
+            );
+          }
+          if (item === "Astro") {
+            return (
+              <img
+                class="h-10 w-10 hover:scale-110 transition-all"
+                src={imgastro}
+              />
+            );
+          }
+          if (item === "JS") {
+            return (
+              <img
+                class="h-10 w-10 hover:scale-110 transition-all"
+                src={imgjs}
+              />
+            );
+          }
+          if (item === "Tailwind") {
+            return (
+              <img
+                class="h-10 w-10 hover:scale-110 transition-all"
+                src={imgtailwind}
+              />
+            );
+          }
+          if (item === "Next") {
+            return (
+              <img
+                class="h-10 w-10 hover:scale-110 transition-all"
+                src={imgnext}
+              />
+            );
+          }
+          if (item === "Python") {
+            return (
+              <img
+                class="h-10 w-10 hover:scale-110 transition-all"
+                src={imgpython}
+              />
+            );
+          }
+          return null;
+        })
+      }
+    </div>
+    <a href={`/${lang.code}${proyect.url}`} class="pt-4 text-cyan-600 underline"
+      >Saber más</a
+    >
+  </div>
+</div>
+
+<script>
+  const idimgs = document.querySelectorAll('[id^="idimg"]');
+  idimgs.forEach((el) => {
+    el.addEventListener("click", () => {
+      console.log(el);
+      //const proyect = el.id.slice(7);
+      //window.location.href = `${proyect}`;
+    });
+  });
+</script>

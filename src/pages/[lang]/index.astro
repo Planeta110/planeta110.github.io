@@ -1,0 +1,26 @@
+---
+import Main from '../../components/main/main.astro';
+import Layout from '../../layouts/Layout.astro';
+
+import es from "../../i18n/es.json";
+import en from "../../i18n/en.json";
+import si from "../../i18n/si.json";
+
+export async function getStaticPaths() {
+  return [
+    { params: { lang: "es" } },
+    { params: { lang: "en" } },
+    { params: { lang: "si" } },
+  ];
+}
+
+const { lang } = Astro.params;
+
+const translations = { es, en, si };
+const t = translations[lang] ?? translations.es;
+
+---
+
+<Layout title="Planeta110" lang={t}>
+	<Main  lang={t} />
+</Layout>

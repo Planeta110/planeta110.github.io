@@ -1,0 +1,96 @@
+---
+import Mdload from "./mdload.astro";
+const imgreact = "/react-svgrepo-com.svg";
+const imgastro = "/astro-svgrepo-com.svg";
+const imgjs = "/js-svgrepo-com.svg";
+const imgtailwind = "/tailwind-svgrepo-com.svg";
+const imgnext = "/nextjs-fill-svgrepo-com.svg";
+const imgpython = "/python-svgrepo-com.svg";
+const { lang, p } = Astro.props;
+---
+
+<div
+  class="md:w-[700px] w-[90%] flex flex-col items-center text-black dark:text-white"
+>
+  <div class="w-full justify-between bg-none ml-0 md:ml-3 mt-4">
+    <button
+      id="gobackbutton"
+      class="cursor-pointer bg-neutral-200 hover:bg-neutral-300 dark:bg-neutral-800 dark:hover:bg-neutral-700 p-[6px] rounded-[3px] w-max"
+    >
+      {lang.main.proyectos.back}</button
+    >
+  </div>
+  <h1 class="font-bold text-4xl text-center mt-5 md:mt-2">{p.title}</h1>
+  <h2 class="mt-2">{lang.main.proyectos.documentation}</h2>
+  <h2 class="mt-2">{lang.main.proyects.tecnologiestraduction}:</h2>
+  <div
+    class="flex flex-row mt-3 flex-wrap md:max-w-[200px] lg:max-w-[300px] justify-center gap-2"
+  >
+    {
+      p.technologys.map((item: any, key: number) => {
+        if (item === "React") {
+          return (
+            <img
+              class="h-15 w-15 hover:scale-110 transition-all"
+              alt={item}
+              src={imgreact}
+            />
+          );
+        }
+        if (item === "Astro") {
+          return (
+            <img
+              class="h-15 w-15 hover:scale-110 transition-all"
+              alt={item}
+              src={imgastro}
+            />
+          );
+        }
+        if (item === "JS") {
+          return (
+            <img class="h-15 w-15 hover:scale-110 transition-all" src={imgjs} />
+          );
+        }
+        if (item === "Tailwind") {
+          return (
+            <img
+              class="h-15 w-15 hover:scale-110 transition-all"
+              alt={item}
+              src={imgtailwind}
+            />
+          );
+        }
+        if (item === "Next") {
+          return (
+            <img
+              class="h-15 w-15 hover:scale-110 transition-all"
+              alt={item}
+              src={imgnext}
+            />
+          );
+        }
+        if (item === "Python") {
+          return (
+            <img
+              class="h-15 w-15 hover:scale-110 transition-all"
+              alt={item}
+              src={imgpython}
+            />
+          );
+        }
+        return null;
+      })
+    }
+  </div>
+  <!-- Add md in react component to make easily to do -->
+  <Mdload proyect={p} />
+</div>
+
+<script>
+  const gobackbutton = document.getElementById("gobackbutton");
+
+  gobackbutton?.addEventListener("click", () => {
+    const lang = window.location.pathname.split("/")[1]; // extrae el idioma de la URL
+    window.location.href = `/${lang}/`;
+  });
+</script>

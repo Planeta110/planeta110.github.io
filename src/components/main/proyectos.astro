@@ -1,0 +1,40 @@
+---
+const { lang } = Astro.props;
+import Proyecto from "./proyecto.astro";
+import Demostration from "./demostrationapp";
+const json = {
+  title: "Weather Web",
+  technologys: "fdas",
+  urlimg:
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRd2T5-AGFHHrt8FyVSr8rR2VBgOoqjO0QZQ&s",
+};
+const jsons = {
+  title: "Wher Web",
+  technologys: "fdas",
+  urlimg: "https://www.zaarapp.com/assets/images/weather.png",
+};
+---
+
+<h1 class="md:mt-14 mt-5 lg:mt-20">{lang.main.proyectos.title}</h1>
+<div class="flex flex-col items-center w-full" id="proyects">
+  <div
+    class="flex rounded-[8px] flex-col w-full lg:grid lg:grid-cols-3 grid-rows-6 gap-4 p-1 md:p-2 lg:p-3"
+  >
+    <div
+      class="col-span-2 rounded-[8px] md:max-h-[550px] overflow-y-auto row-span-6 md:dark:bg-slate-800 md:bg-neutral-600"
+    >
+      <div class="mt-2 flex flex-col items-center md:p-4 w-full pr-2">
+        {
+          lang.main.proyects.proyects.map((item: any, key: number) => (
+            <Proyecto proyect={item} lang={lang} key={key} />
+          ))
+        }
+      </div>
+    </div>
+    <div
+      class="hidden md:flex flex-col  justify-center  md:p-2 rounded-[8px] row-span-6 col-start-3 dark:bg-slate-800 bg-neutral-600"
+    >
+      <Demostration client:load/>
+    </div>
+  </div>
+</div>

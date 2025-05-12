@@ -1,0 +1,13 @@
+---
+const { proyect } = Astro.props;
+import { marked } from "marked";
+const data = await fetch(`${proyect.mdurl}`);
+const mdContent = await data.text();
+
+const html = marked(mdContent);
+---
+
+<section
+  class="prose dark:prose-invert mx-auto my-8 w-full max-w-[90vw] overflow-visible"
+  set:html={html}
+/>

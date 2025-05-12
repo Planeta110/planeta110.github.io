@@ -1,0 +1,39 @@
+---
+import Layout from "../../../../layouts/Layout.astro";
+import es from "../../../../i18n/es.json";
+import en from "../../../../i18n/en.json";
+import si from "../../../../i18n/si.json";
+import Maininfoproyect from "../../../../components/mainproyect/maininfoproyect.astro";
+
+export async function getStaticPaths() {
+  const langs = ["es", "en", "si"];
+  // Array de objetos pr3oyecto de tu JSON
+  const proyectosData = es.main.proyects.proyects;
+
+  const paths = [];
+
+  for (const lang of langs) {
+    for (const { title } of proyectosData) {
+      paths.push({ params: { lang, proyect: title } });
+    }
+  }
+
+  return paths;
+}
+
+const { lang, proyect } = Astro.params;
+
+const translations = { es, en, si };
+const t = translations[lang] ?? translations.es;
+
+// Usamos directamente el array de objetos
+const proyectosData = t.main.proyects.proyects;
+// Encuentra el objeto cuyo title coincide con la ruta
+const p = proyectosData.find((item) => item.title === proyect);
+---
+
+<Layout title="Planeta110" lang={t}>
+  <div class="pt-24 flex flex-col items-center min-h-screen overflow-x-hidden">
+    <Maininfoproyect lang={t} p={p} />
+  </div>
+</Layout>

@@ -1,0 +1,54 @@
+{
+  "code": "en",
+  "Navbar": {
+    "ahome": "Home",
+    "proyectos": "Proyects",
+    "optiondisabled": "(ES default)"
+  },
+  "errorpage": {
+    "title": "404 | ERROR",
+    "description": "This page does not exist"
+  },
+  "main": {
+    "title": "Hello, I'm Planeta110 {}",
+    "text": "Hello, I'm <b class='bg-lime-500 dark:bg-green-500 p-[2px]' >Planeta110</b>, a passionate web developer. I work with technologies like <b class='bg-cyan-500' >HTML, CSS, and JavaScript</b>, and I have experience using various modern frameworks to build fast, accessible, and visually appealing websites. I also have solid knowledge of <b class='bg-cyan-500 p-[2px]'>Express.js</b> for backend development and API handling, as well as <b class='bg-cyan-500 p-[2px]'>Python</b>, which I use for both automation and personal or backend projects.<b class='bg-amber-500 p-[2px]'> I'm always learning and exploring new tools to take my projects to the next level 🚀.</b>",
+    "proyectos": {
+      "title": "Proyects",
+      "back": "Back",
+      "documentation": "Documentation"
+    },
+    "proyects": {
+      "tecnologiestraduction": "Technologys",
+      "proyects": [
+        {
+          "id": 1,
+          "title": "Weather Web",
+          "technologys": ["Astro", "Tailwind", "JS", "React"],
+          "mdurl": "https://raw.githubusercontent.com/Planeta110/weatherweb/master/README.md",
+          "url": "/proyects/Weather Web",
+          "urlimg": "https://raw.githubusercontent.com/Planeta110/weatherweb/master/demostration.gif",
+          "urlimgstatic": "https://raw.githubusercontent.com/Planeta110/proyect-images/main/weather/staticw.png"
+        },
+        {
+          "id": 2,
+          "title": "Coding Festival",
+          "technologys": ["React", "JS", "Tailwind"],
+          "mdurl": "https://raw.githubusercontent.com/Planeta110/Coding-Festival/main/README.md",
+          "url": "/proyects/Coding Festival",
+          "urlimg": "https://raw.githubusercontent.com/Planeta110/proyect-images/main/coding-festival/demostration.gif",
+          "urlimgstatic": "https://raw.githubusercontent.com/Planeta110/proyect-images/main/coding-festival/static.png"
+        }
+      ]
+    },
+    "skills": {
+      "title": "Skills"
+      
+    },
+    "experience": {
+      "title": "Experience"
+    },
+    "contact": {
+      "title": "Contact me"
+    }
+  }
+}

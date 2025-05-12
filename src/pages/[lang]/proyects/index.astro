@@ -1,0 +1,36 @@
+---
+import Main from "../../../components/main/main.astro";
+import Layout from "../../../layouts/Layout.astro";
+import Proyecto from "../../../components/main/proyecto.astro";
+
+import es from "../../../i18n/es.json";
+import en from "../../../i18n/en.json";
+import si from "../../../i18n/si.json";
+
+export async function getStaticPaths() {
+  return [
+    { params: { lang: "es" } },
+    { params: { lang: "en" } },
+    { params: { lang: "si" } },
+  ];
+}
+
+const { lang } = Astro.params;
+
+const translations = { es, en, si };
+const t = translations[lang] ?? translations.es;
+
+---
+
+<Layout title="Planeta110" lang={t}>
+  <div class="pt-24 flex flex-col items-center h-full">
+    <h1 class="mt-20 w-full pl-4 md:pl-10 ">{t.main.proyectos.title} 🚀</h1>
+    <div class="md:max-w-[900px] w-[90%] mt-4">
+      {
+        t.main.proyects.proyects.map((item: any, key: number) => (
+          <Proyecto proyect={item} lang={t} key={key} />
+        ))
+      }
+    </div>
+  </div>
+</Layout>

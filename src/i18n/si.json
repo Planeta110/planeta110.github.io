@@ -1,0 +1,53 @@
+{
+  "code": "si",
+  "Navbar": {
+    "ahome": "Domov",
+    "proyectos": "Projekti",
+    "optiondisabled": "(ES defualt)"
+  },
+  "errorpage": {
+    "title": "404 | NAPAKA",
+    "description": "Ta stran ne obstaja"
+  },
+  "main": {
+    "title": "Zdravo, jaz sem Planeta110 {}",
+    "text": "Pozdravljeni, sem <b class='bg-lime-500 dark:bg-green-500 p-[2px]' >Planeta110</b>, strasten spletni razvijalec. Delam s tehnologijami, kot so <b class='bg-cyan-500' >HTML, CSS in JavaScript</b>, ter imam izkušnje z uporabo sodobnih ogrodij za ustvarjanje hitrih, dostopnih in vizualno privlačnih spletnih mest. Dobro poznam tudi <b class='bg-cyan-500 p-[2px]'>Express.js</b> za razvoj strežniškega dela in upravljanje API-jev, poleg tega pa uporabljam <b class='bg-cyan-500 p-[2px]'>Python</b> za avtomatizacijo procesov ter osebne ali strežniške projekte.<b class=' bg-amber-500 p-[2px]'> Vedno se učim in raziskujem nova orodja, da svoje projekte dvignem na višjo raven 🚀.</b>",
+    "proyectos": {
+      "title": "Projekti",
+      "back": "Nazaj",
+      "documentation": "Dokumentacija"
+    },
+    "proyects": {
+      "tecnologiestraduction": "Tehnologije",
+      "proyects": [
+        {
+          "id": 1,
+          "title": "Weather Web",
+          "technologys": ["Astro", "Tailwind", "JS", "React"],
+          "mdurl": "https://raw.githubusercontent.com/Planeta110/weatherweb/master/README.md",
+          "url": "/proyects/Weather Web",
+          "urlimg": "https://raw.githubusercontent.com/Planeta110/weatherweb/master/demostration.gif",
+          "urlimgstatic": "https://raw.githubusercontent.com/Planeta110/proyect-images/main/weather/staticw.png"
+        },
+        {
+          "id": 2,
+          "title": "Coding Festival",
+          "technologys": ["React", "JS", "Tailwind"],
+          "mdurl": "https://raw.githubusercontent.com/Planeta110/Coding-Festival/main/README.md",
+          "url": "/proyects/Coding Festival",
+          "urlimg": "https://raw.githubusercontent.com/Planeta110/proyect-images/main/coding-festival/demostration.gif",
+          "urlimgstatic": "https://raw.githubusercontent.com/Planeta110/proyect-images/main/coding-festival/static.png"
+        }
+      ]
+    },
+    "skills": {
+      "title": "Spretnosti"
+    },
+    "experience": {
+      "title": "Izkušnje"
+    },
+    "contact": {
+      "title": "Kontaktiraj me"
+    }
+  }
+}

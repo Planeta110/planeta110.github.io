@@ -1,0 +1,104 @@
+---
+const { lang } = Astro.props;
+---
+
+<nav
+  transition:persist
+  class="h-20 z-50 flex flex-row items-center justify-center p-1 dark:bg-zinc-900/30 bg-neutral-300/50 backdrop-blur-2xl fixed top-0 left-0 w-full"
+>
+  <div
+    class="w-full md:w-[700px] lg:w-[1100px] h-full items-center flex flex-row justify-between"
+  >
+    <h1 class="text-2xl">Planeta110</h1>
+    <div class="w-full">
+      <div class="flex pl-2 flex-row items-end">
+        <a class="pl-1 md:pl-5 cursor-pointer" id="ahome">{lang.Navbar.ahome}</a
+        >
+        <a class="pl-1 md:pl-5 hidden md:block" href="#proyects"
+          >{lang.Navbar.proyectos}</a
+        >
+      </div>
+    </div>
+    <div class="flex flex-row items-center gap-2 md:gap-10 pr-2">
+      <select name="" id="selectid">
+        <option
+          class="text-black max-w-[30px] bg-neutral-100 text-center"
+          value=""
+          disabled
+          selected>{lang.Navbar.optiondisabled}</option
+        >
+        <option class="text-black bg-neutral-100 text-center" value="es"
+          >Español</option
+        >
+        <option class="text-black bg-neutral-100 text-center" value="en"
+          >English</option
+        >
+        <option class="text-black bg-neutral-100 text-center" value="si"
+          >Slovenščina</option
+        >
+      </select>
+
+      <button
+        id="toggle-theme"
+        class="cursor-pointer w-10 h-10 rounded-full bg-neutral-400/50 hover:dark:bg-neutral-300/50 hover:bg-neutral-400 items-center flex justify-center"
+      >
+      </button>
+    </div>
+  </div>
+</nav>
+
+<script is:inline>
+  const selectid = document.getElementById("selectid");
+  const ahome = document.getElementById("ahome");
+  const toggleBtn = document.getElementById("toggle-theme");
+  let isDark;
+
+  ahome?.addEventListener("click", () => {
+    const lang = window.location.pathname.split("/")[1]; // extrae el idioma de la URL
+    window.location.href = `/${lang}/`;
+  });
+
+  selectid?.addEventListener("change", (e) => {
+    const selectedValue = document.getElementById("selectid").value;
+    const url = new URL(window.location.href);
+    const path = url.pathname.split("/").slice(2).join("/"); // Quita el idioma actual
+    window.location.href = `/${selectedValue}/${path}`;
+  });
+
+  if (localStorage.getItem("theme") === "dark") {
+    isDark = true;
+  } else {
+    isDark = false;
+  }
+
+  function updateIcon() {
+    toggleBtn.innerHTML = isDark
+      ? // luna
+        `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6m0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708" />
+      </svg>`
+      : `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278M4.858 1.311A7.27 7.27 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.32 7.32 0 0 0 5.205-2.162q-.506.063-1.029.063c-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286" />
+      </svg>`; // sol
+  }
+  updateIcon();
+
+  toggleBtn.addEventListener("click", () => {
+    if (localStorage.getItem("theme") === "dark") {
+      setLightMode();
+    } else {
+      setDarkMode();
+    }
+    updateIcon();
+  });
+
+  function setLightMode() {
+    localStorage.setItem("theme", "light");
+    document.documentElement.classList.remove("dark");
+  }
+
+  function setDarkMode() {
+    localStorage.setItem("theme", "dark");
+    document.documentElement.classList.add("dark");
+  }
+</script>

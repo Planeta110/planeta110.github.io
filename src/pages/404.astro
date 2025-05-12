@@ -1,0 +1,39 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import es from "../i18n/es.json";
+import en from "../i18n/en.json";
+import si from "../i18n/si.json";
+
+export async function getStaticPaths() {
+  return [
+    { params: { lang: "es" } },
+    { params: { lang: "en" } },
+    { params: { lang: "si" } },
+  ];
+}
+
+const { lang } = Astro.params;
+
+const translations = { es, en, si };
+const t = translations[lang] ?? translations.en;
+---
+
+<Layout title="Planeta110" lang={t}>
+  <div class="h-full w-full flex flex-col items-center justify-center">
+    <h1 class="text-4xl md:text-6xl p-2  rounded-[15px] ">{t.errorpage.title}</h1>
+    <h2 class="mt-6">{t.errorpage.description}</h2>
+
+    <button id="backbutton" class="mt-15 bg-neutral-800 p-2 rounded-[6px] cursor-pointer text-white dark:text-black dark:bg-neutral-200">
+      {t.main.proyectos.back}
+    </button>
+  </div>
+</Layout>
+
+<script is:inline>
+  const backbutton = document.getElementById("backbutton");
+
+  backbutton?.addEventListener("click", () => {
+    window.location.href = "/";
+  });
+</script>

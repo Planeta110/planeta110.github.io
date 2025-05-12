@@ -1,0 +1,17 @@
+---
+import Experiencia from "./carta";
+import Contacts from "./contacts.jsx";
+const { lang } = Astro.props;
+---
+
+<section class="mt-20 w-full">
+  <div class="w-full flex flex-col items-center">
+    <Experiencia client:load />
+  </div>
+  <section class="mt-4">
+    <h1>{lang.main.contact.title}</h1>
+    <div class="w-full flex flex-col items-center mt-2">
+      <Contacts client:load />
+    </div>
+  </section>
+</section>
