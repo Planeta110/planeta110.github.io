@@ -1,0 +1,276 @@
+<!DOCTYPE html><html lang="es" data-astro-cid-sckkx6r4> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v5.7.4"><title>Planeta110 | 2025</title><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.BZs-2RF_.js"></script><!-- Open Graph (para Facebook, Discord, etc.) --><meta property="og:type" content="website"><meta property="og:url" content="https://planeta110.github.io/"><meta property="og:title" content="Planeta110 | 2025"><meta property="og:description" content="Bienvenido al portafolio de Planeta110, un desarrollador web apasionado por crear experiencias digitales modernas, funcionales y atractivas."><meta property="og:image" content="https://planeta110.github.io/preview.png"><meta property="og:site_name" content="planeta110"><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Planeta110 | 2025"><meta name="twitter:description" content="Bienvenido al portafolio de Planeta110, un desarrollador web apasionado por crear experiencias digitales modernas, funcionales y atractivas."><meta name="twitter:image" content="https://planeta110.github.io/preview.png"><meta name="twitter:site" content="https://planeta110.github.io/"><!-- Tema en navegadores móviles --><meta name="theme-color" content="#0d0d0d"><link rel="stylesheet" href="/_astro/index.DFXy-lLl.css">
+<style>@keyframes astroFadeInOut{0%{opacity:1}to{opacity:0}}@keyframes astroFadeIn{0%{opacity:0;mix-blend-mode:plus-lighter}to{opacity:1;mix-blend-mode:plus-lighter}}@keyframes astroFadeOut{0%{opacity:1;mix-blend-mode:plus-lighter}to{opacity:0;mix-blend-mode:plus-lighter}}@keyframes astroSlideFromRight{0%{transform:translate(100%)}}@keyframes astroSlideFromLeft{0%{transform:translate(-100%)}}@keyframes astroSlideToRight{to{transform:translate(100%)}}@keyframes astroSlideToLeft{to{transform:translate(-100%)}}@media (prefers-reduced-motion){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}[data-astro-transition-scope]{animation:none!important}}.astro-route-announcer{position:absolute;left:0;top:0;clip:rect(0 0 0 0);clip-path:inset(50%);overflow:hidden;white-space:nowrap;width:1px;height:1px}html,body{margin:0;width:100%;height:100%}
+</style></head> <body class="transition-colors duration-300 h-full w-full dark:text-white text-black font-poppins dark:bg-gradient-to-r dark:from-blue-900 dark:to-slate-800 bg-gradient-to-r from-slate-100 to-slate-300" data-astro-cid-sckkx6r4> <nav class="h-20 z-50 flex flex-row items-center justify-center p-1 dark:bg-zinc-900/30 bg-neutral-300/50 backdrop-blur-2xl fixed top-0 left-0 w-full" data-astro-transition-persist="astro-rdjc7vue-1"> <div class="w-full md:w-[700px] lg:w-[1100px] h-full items-center flex flex-row justify-between"> <h1 class="text-2xl">Planeta110</h1> <div class="w-full"> <div class="flex pl-2 flex-row items-end"> <a class="pl-1 md:pl-5 cursor-pointer" id="ahome">Inicio</a> <a class="pl-1 md:pl-5 hidden md:block" href="#proyects">Proyectos</a> </div> </div> <div class="flex flex-row items-center gap-2 md:gap-10 pr-2"> <select name="" id="selectid"> <option class="text-black max-w-[30px] bg-neutral-100 text-center" value="" disabled selected>(ES defualt)</option> <option class="text-black bg-neutral-100 text-center" value="es">Español</option> <option class="text-black bg-neutral-100 text-center" value="en">English</option> <option class="text-black bg-neutral-100 text-center" value="si">Slovenščina</option> </select> <button id="toggle-theme" class="cursor-pointer w-10 h-10 rounded-full bg-neutral-400/50 hover:dark:bg-neutral-300/50 hover:bg-neutral-400 items-center flex justify-center"></button> </div> </div> </nav> <script>
+  const selectid = document.getElementById("selectid");
+  const ahome = document.getElementById("ahome");
+  const toggleBtn = document.getElementById("toggle-theme");
+  let isDark;
+
+  ahome?.addEventListener("click", () => {
+    const lang = window.location.pathname.split("/")[1]; // extrae el idioma de la URL
+    window.location.href = `/${lang}/`;
+  });
+
+  selectid?.addEventListener("change", (e) => {
+    const selectedValue = document.getElementById("selectid").value;
+    const url = new URL(window.location.href);
+    const path = url.pathname.split("/").slice(2).join("/"); // Quita el idioma actual
+    window.location.href = `/${selectedValue}/${path}`;
+  });
+
+  if (localStorage.getItem("theme") === "dark") {
+    isDark = true;
+  } else {
+    isDark = false;
+  }
+
+  function updateIcon() {
+    toggleBtn.innerHTML = isDark
+      ? // luna
+        `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6m0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708" />
+      </svg>`
+      : `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278M4.858 1.311A7.27 7.27 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.32 7.32 0 0 0 5.205-2.162q-.506.063-1.029.063c-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286" />
+      </svg>`; // sol
+  }
+  updateIcon();
+
+  toggleBtn.addEventListener("click", () => {
+    if (localStorage.getItem("theme") === "dark") {
+      setLightMode();
+    } else {
+      setDarkMode();
+    }
+    updateIcon();
+  });
+
+  function setLightMode() {
+    localStorage.setItem("theme", "light");
+    document.documentElement.classList.remove("dark");
+  }
+
+  function setDarkMode() {
+    localStorage.setItem("theme", "dark");
+    document.documentElement.classList.add("dark");
+  }
+</script> <style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).load=e;window.dispatchEvent(new Event("astro:load"));})();;(()=>{var A=Object.defineProperty;var g=(i,o,a)=>o in i?A(i,o,{enumerable:!0,configurable:!0,writable:!0,value:a}):i[o]=a;var d=(i,o,a)=>g(i,typeof o!="symbol"?o+"":o,a);{let i={0:t=>m(t),1:t=>a(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(a(t)),5:t=>new Set(a(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>1/0*t},o=t=>{let[l,e]=t;return l in i?i[l](e):void 0},a=t=>t.map(o),m=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([l,e])=>[l,o(e)]));class y extends HTMLElement{constructor(){super(...arguments);d(this,"Component");d(this,"hydrator");d(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let c=this.querySelectorAll("astro-slot"),n={},h=this.querySelectorAll("template[data-astro-template]");for(let r of h){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("data-astro-template")||"default"]=r.innerHTML,r.remove())}for(let r of c){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("name")||"default"]=r.innerHTML)}let p;try{p=this.hasAttribute("props")?m(JSON.parse(this.getAttribute("props"))):{}}catch(r){let s=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(s+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${s}`,this.getAttribute("props"),r),r}let u;await this.hydrator(this)(this.Component,p,n,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});d(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),c.disconnect(),this.childrenConnectedCallback()},c=new MutationObserver(()=>{var n;((n=this.lastChild)==null?void 0:n.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});c.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}async start(){let e=JSON.parse(this.getAttribute("opts")),c=this.getAttribute("client");if(Astro[c]===void 0){window.addEventListener(`astro:${c}`,()=>this.start(),{once:!0});return}try{await Astro[c](async()=>{let n=this.getAttribute("renderer-url"),[h,{default:p}]=await Promise.all([import(this.getAttribute("component-url")),n?import(n):()=>()=>{}]),u=this.getAttribute("component-export")||"default";if(!u.includes("."))this.Component=h[u];else{this.Component=h;for(let f of u.split("."))this.Component=this.Component[f]}return this.hydrator=p,this.hydrate},e,this)}catch(n){console.error(`[astro-island] Error hydrating ${this.getAttribute("component-url")}`,n)}}attributeChangedCallback(){this.hydrate()}}d(y,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",y)}})();</script><astro-island uid="NWtON" prefix="r1" component-url="/_astro/ThemeScript.C96YaN69.js" component-export="default" renderer-url="/_astro/client.BPIbHqJh.js" props="{&quot;data-astro-cid-sckkx6r4&quot;:[0,true]}" ssr client="load" opts="{&quot;name&quot;:&quot;ThemeClient&quot;,&quot;value&quot;:true}"></astro-island>  <div class="pt-24 flex flex-col items-center min-h-screen overflow-x-hidden"> <div class="md:w-[700px] w-[90%] flex flex-col items-center text-black dark:text-white"> <div class="w-full justify-between bg-none ml-0 md:ml-3 mt-4"> <button id="gobackbutton" class="cursor-pointer bg-neutral-200 hover:bg-neutral-300 dark:bg-neutral-800 dark:hover:bg-neutral-700 p-[6px] rounded-[3px] w-max"> Volver</button> </div> <h1 class="font-bold text-4xl text-center mt-5 md:mt-2">Weather Web</h1> <h2 class="mt-2">Documentación</h2> <h2 class="mt-2">Tecnologias:</h2> <div class="flex flex-row mt-3 flex-wrap md:max-w-[200px] lg:max-w-[300px] justify-center gap-2"> <img class="h-15 w-15 hover:scale-110 transition-all" alt="Astro" src="/astro-svgrepo-com.svg"><img class="h-15 w-15 hover:scale-110 transition-all" alt="Tailwind" src="/tailwind-svgrepo-com.svg"><img class="h-15 w-15 hover:scale-110 transition-all" src="/js-svgrepo-com.svg"><img class="h-15 w-15 hover:scale-110 transition-all" alt="React" src="/react-svgrepo-com.svg"> </div> <!-- Add md in react component to make easily to do --> <section class="prose dark:prose-invert mx-auto my-8 w-full max-w-[90vw] overflow-visible"><h1>Weather Web</h1>
+<h1>| ES |</h1>
+<p><a href="https://weather-climate-web.vercel.app/">Link to the web</a></p>
+<h2>Versión 1.0 Alpha</h2>
+<p>Proyecto sobre la información del clima y del tiempo.
+Está creado con Astro y partes con componentes de React.</p>
+<img src="https://raw.githubusercontent.com/Planeta110/weatherweb/master/demostration.gif" alt="Demo" class="h-[300px] object-cover" />
+
+<p>Este proyecto se ha creado para practicar el framework de Astro y las peticiones/respuestas a una API.</p>
+<p>Esta guía incluye la información de esta tabla:</p>
+<table>
+<thead>
+<tr>
+<th>Acción</th>
+<th>Incluido</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Información básica sobre el proyecto</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Guía de instalación</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Información sobre la última versión</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Información sobre la licencia</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Cómo contribuir</td>
+<td>✖️</td>
+</tr>
+</tbody></table>
+<h2>Instalation</h2>
+<p>Para la <strong>instalación</strong>, clona el proyecto de GitHub con este comando:</p>
+<pre><code class="language-bash">git clone https://github.com/Planeta110/weatherweb
+</code></pre>
+<p>Después, instala las dependencias con este comando:</p>
+<pre><code class="language-bash">npm install
+</code></pre>
+<h3>Ejecución</h3>
+<p>Ejecuta este comando para iniciar la web en tu máquina:</p>
+<pre><code class="language-bash">npm run dev
+</code></pre>
+<p>Accede a la web en local desde esta URL:</p>
+<pre><code class="language-bash">localhost:4321
+</code></pre>
+<p>Pasos</p>
+<ol>
+<li>Clona el proyecto</li>
+<li>Ve al proyecto (cd ....)<ol>
+<li>Instala las dependencias</li>
+</ol>
+</li>
+<li>Ejecuta <strong>npm run dev</strong></li>
+<li>Accede a la web desde <strong>localhost:4321</strong></li>
+</ol>
+<h2>Construcción</h2>
+<p>Haz la build con este comando:</p>
+<pre><code class="language-bash">npm run build
+</code></pre>
+<h1>Ultima versión</h1>
+<p>La ultima versión agrego el footer, el about y toda la información basica, luego 
+la pagina de información del tiempo de las localidades, ciudades etc y todo.</p>
+<ol>
+<li>Basic Web</li>
+<li>Climate page information about cities etc.</li>
+<li>About page</li>
+<li>Search Page</li>
+<li>More</li>
+</ol>
+<h1>Licencia</h1>
+<p>MIT License with Custom Restrictions</p>
+<p>Copyright (c) [2025] Planeta110
+Se concede permiso, de forma gratuita, para usar (limitaciones abajo), copiar, modificar y distribuir el software en sus copias, siempre que se cumpla lo siguiente:</p>
+<ol>
+<li><p>El código no puede ser usado para crear un proyecto comercial sin el permiso explícito del autor.</p>
+</li>
+<li><p>El autor no asume ninguna responsabilidad en relación al uso de este código. Este software se distribuye &quot;tal cual&quot;, sin garantías de ningún tipo, ya sean expresas o implícitas.</p>
+</li>
+<li><p>Las imágenes usadas no son del autor Planeta110, se rigen bajo su propia licencia explícita. Más información sobre las licencias de esas imágenes en las páginas donde aparezcan.</p>
+</li>
+<li><p>CCon modificaciones, debe seguir compartiendo la misma licencia y, si se modifica, poner la atribución del autor (Planeta110).</p>
+</li>
+<li><p>Los datos obtenidos de las solicitudes del tiempo son de Open Mateo.</p>
+</li>
+</ol>
+<h1>English Version</h1>
+<h2>Version 1.0 Alpha</h2>
+<p>A project about weather and climate information.
+It is built with Astro and parts using React components.</p>
+<img src="https://raw.githubusercontent.com/Planeta110/weatherweb/master/demostration.gif" alt="Demo" class="h-[300px] object-cover" />
+
+<p>This project was created to practice the Astro framework and API requests/responses.</p>
+<p>This guide includes the information in this table:</p>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Included</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Basic information about the project</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Installation guide</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Information about the latest version</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Information about the license</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>How to contribute</td>
+<td>✖️</td>
+</tr>
+</tbody></table>
+<h2>Instalation</h2>
+<p>For the <strong>installation</strong> clone the project from GitHub using this command:</p>
+<pre><code class="language-bash">git clone https://github.com/Planeta110/weatherweb
+</code></pre>
+<p>Then, install the dependencies with this command:</p>
+<pre><code class="language-bash">npm install
+</code></pre>
+<h3>Running the Project</h3>
+<p>Run this command to start the web on your machine:</p>
+<pre><code class="language-bash">npm run dev
+</code></pre>
+<p>Access the web locally from this URL:</p>
+<pre><code class="language-bash">localhost:4321
+</code></pre>
+<ol>
+<li>Clone the project</li>
+<li>Go to the project<ol>
+<li>Install the dependencies</li>
+</ol>
+</li>
+<li>Run <strong>npm run dev</strong></li>
+<li>Access the web from <strong>localhost:4321</strong></li>
+</ol>
+<h2>Build</h2>
+<p>Make the build with this command:</p>
+<pre><code class="language-bash">npm run build
+</code></pre>
+<h1>Latest Version</h1>
+<p>The latest version added the footer, the about section, and all the basic information, followed by the weather information page for locations, cities, etc., and everything else.</p>
+<ol>
+<li>Basic Web</li>
+<li>Climate page information about cities, etc.</li>
+<li>About page</li>
+<li>Search page</li>
+<li>More</li>
+</ol>
+<h1>License</h1>
+<p>MIT License with Custom Restrictions</p>
+<p>Copyright (c) [2025] Planeta110</p>
+<p>Permission is hereby granted, free of charge, to use (with limitations below), copy, modify, and distribute the software in its copies, provided that the following conditions are met:</p>
+<ol>
+<li>The code may not be used to create a commercial project without the explicit permission of the author.</li>
+<li>The author assumes no responsibility for the use of this code. This software is distributed &quot;as is&quot;, without warranties of any kind, either express or implied.</li>
+<li>The images used are not from the author Planeta110, they are governed by their own explicit license. More information about the licenses for these images can be found on the pages where they appear.</li>
+<li>With modifications, the same license must be shared, and if modified, attribution to the author (Planeta110) must be included.</li>
+<li>The weather data obtained from the requests are from Open Mateo.</li>
+</ol>
+</section> </div> <script type="module">const n=document.getElementById("gobackbutton");n?.addEventListener("click",()=>{const t=window.location.pathname.split("/")[1];window.location.href=`/${t}/`});</script> </div>   <script>
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const savedTheme = localStorage.getItem("theme");
+
+  // Si hay un tema guardado, lo aplica; si no, se ajusta al tema del sistema y lo guarda
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  } else if (savedTheme === "light") {
+    document.documentElement.classList.remove("dark");
+  } else {
+    // Si no hay preferencia guardada, ajusta al sistema y guarda la preferencia
+    if (prefersDark) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }
+
+  // Funciones para cambiar el tema manualmente
+  function setLightMode() {
+    localStorage.setItem("theme", "light");
+    document.documentElement.classList.remove("dark");
+  }
+
+  function setDarkMode() {
+    localStorage.setItem("theme", "dark");
+    document.documentElement.classList.add("dark");
+  }
+
+  function setSystemMode() {
+    localStorage.removeItem("theme");
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
+    if (prefersDark) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }
+</script></body></html>

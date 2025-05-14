@@ -1,0 +1,195 @@
+<!DOCTYPE html><html lang="si" data-astro-cid-sckkx6r4> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v5.7.4"><title>Planeta110 | 2025</title><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.BZs-2RF_.js"></script><!-- Open Graph (para Facebook, Discord, etc.) --><meta property="og:type" content="website"><meta property="og:url" content="https://planeta110.github.io/"><meta property="og:title" content="Planeta110 | 2025"><meta property="og:description" content="Bienvenido al portafolio de Planeta110, un desarrollador web apasionado por crear experiencias digitales modernas, funcionales y atractivas."><meta property="og:image" content="https://planeta110.github.io/preview.png"><meta property="og:site_name" content="planeta110"><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Planeta110 | 2025"><meta name="twitter:description" content="Bienvenido al portafolio de Planeta110, un desarrollador web apasionado por crear experiencias digitales modernas, funcionales y atractivas."><meta name="twitter:image" content="https://planeta110.github.io/preview.png"><meta name="twitter:site" content="https://planeta110.github.io/"><!-- Tema en navegadores móviles --><meta name="theme-color" content="#0d0d0d"><link rel="stylesheet" href="/_astro/index.DFXy-lLl.css">
+<style>@keyframes astroFadeInOut{0%{opacity:1}to{opacity:0}}@keyframes astroFadeIn{0%{opacity:0;mix-blend-mode:plus-lighter}to{opacity:1;mix-blend-mode:plus-lighter}}@keyframes astroFadeOut{0%{opacity:1;mix-blend-mode:plus-lighter}to{opacity:0;mix-blend-mode:plus-lighter}}@keyframes astroSlideFromRight{0%{transform:translate(100%)}}@keyframes astroSlideFromLeft{0%{transform:translate(-100%)}}@keyframes astroSlideToRight{to{transform:translate(100%)}}@keyframes astroSlideToLeft{to{transform:translate(-100%)}}@media (prefers-reduced-motion){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}[data-astro-transition-scope]{animation:none!important}}.astro-route-announcer{position:absolute;left:0;top:0;clip:rect(0 0 0 0);clip-path:inset(50%);overflow:hidden;white-space:nowrap;width:1px;height:1px}html,body{margin:0;width:100%;height:100%}
+</style></head> <body class="transition-colors duration-300 h-full w-full dark:text-white text-black font-poppins dark:bg-gradient-to-r dark:from-blue-900 dark:to-slate-800 bg-gradient-to-r from-slate-100 to-slate-300" data-astro-cid-sckkx6r4> <nav class="h-20 z-50 flex flex-row items-center justify-center p-1 dark:bg-zinc-900/30 bg-neutral-300/50 backdrop-blur-2xl fixed top-0 left-0 w-full" data-astro-transition-persist="astro-rdjc7vue-1"> <div class="w-full md:w-[700px] lg:w-[1100px] h-full items-center flex flex-row justify-between"> <h1 class="text-2xl">Planeta110</h1> <div class="w-full"> <div class="flex pl-2 flex-row items-end"> <a class="pl-1 md:pl-5 cursor-pointer" id="ahome">Domov</a> <a class="pl-1 md:pl-5 hidden md:block" href="#proyects">Projekti</a> </div> </div> <div class="flex flex-row items-center gap-2 md:gap-10 pr-2"> <select name="" id="selectid"> <option class="text-black max-w-[30px] bg-neutral-100 text-center" value="" disabled selected>(ES defualt)</option> <option class="text-black bg-neutral-100 text-center" value="es">Español</option> <option class="text-black bg-neutral-100 text-center" value="en">English</option> <option class="text-black bg-neutral-100 text-center" value="si">Slovenščina</option> </select> <button id="toggle-theme" class="cursor-pointer w-10 h-10 rounded-full bg-neutral-400/50 hover:dark:bg-neutral-300/50 hover:bg-neutral-400 items-center flex justify-center"></button> </div> </div> </nav> <script>
+  const selectid = document.getElementById("selectid");
+  const ahome = document.getElementById("ahome");
+  const toggleBtn = document.getElementById("toggle-theme");
+  let isDark;
+
+  ahome?.addEventListener("click", () => {
+    const lang = window.location.pathname.split("/")[1]; // extrae el idioma de la URL
+    window.location.href = `/${lang}/`;
+  });
+
+  selectid?.addEventListener("change", (e) => {
+    const selectedValue = document.getElementById("selectid").value;
+    const url = new URL(window.location.href);
+    const path = url.pathname.split("/").slice(2).join("/"); // Quita el idioma actual
+    window.location.href = `/${selectedValue}/${path}`;
+  });
+
+  if (localStorage.getItem("theme") === "dark") {
+    isDark = true;
+  } else {
+    isDark = false;
+  }
+
+  function updateIcon() {
+    toggleBtn.innerHTML = isDark
+      ? // luna
+        `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6m0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708" />
+      </svg>`
+      : `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278M4.858 1.311A7.27 7.27 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.32 7.32 0 0 0 5.205-2.162q-.506.063-1.029.063c-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286" />
+      </svg>`; // sol
+  }
+  updateIcon();
+
+  toggleBtn.addEventListener("click", () => {
+    if (localStorage.getItem("theme") === "dark") {
+      setLightMode();
+    } else {
+      setDarkMode();
+    }
+    updateIcon();
+  });
+
+  function setLightMode() {
+    localStorage.setItem("theme", "light");
+    document.documentElement.classList.remove("dark");
+  }
+
+  function setDarkMode() {
+    localStorage.setItem("theme", "dark");
+    document.documentElement.classList.add("dark");
+  }
+</script> <style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).load=e;window.dispatchEvent(new Event("astro:load"));})();;(()=>{var A=Object.defineProperty;var g=(i,o,a)=>o in i?A(i,o,{enumerable:!0,configurable:!0,writable:!0,value:a}):i[o]=a;var d=(i,o,a)=>g(i,typeof o!="symbol"?o+"":o,a);{let i={0:t=>m(t),1:t=>a(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(a(t)),5:t=>new Set(a(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>1/0*t},o=t=>{let[l,e]=t;return l in i?i[l](e):void 0},a=t=>t.map(o),m=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([l,e])=>[l,o(e)]));class y extends HTMLElement{constructor(){super(...arguments);d(this,"Component");d(this,"hydrator");d(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let c=this.querySelectorAll("astro-slot"),n={},h=this.querySelectorAll("template[data-astro-template]");for(let r of h){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("data-astro-template")||"default"]=r.innerHTML,r.remove())}for(let r of c){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("name")||"default"]=r.innerHTML)}let p;try{p=this.hasAttribute("props")?m(JSON.parse(this.getAttribute("props"))):{}}catch(r){let s=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(s+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${s}`,this.getAttribute("props"),r),r}let u;await this.hydrator(this)(this.Component,p,n,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});d(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),c.disconnect(),this.childrenConnectedCallback()},c=new MutationObserver(()=>{var n;((n=this.lastChild)==null?void 0:n.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});c.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}async start(){let e=JSON.parse(this.getAttribute("opts")),c=this.getAttribute("client");if(Astro[c]===void 0){window.addEventListener(`astro:${c}`,()=>this.start(),{once:!0});return}try{await Astro[c](async()=>{let n=this.getAttribute("renderer-url"),[h,{default:p}]=await Promise.all([import(this.getAttribute("component-url")),n?import(n):()=>()=>{}]),u=this.getAttribute("component-export")||"default";if(!u.includes("."))this.Component=h[u];else{this.Component=h;for(let f of u.split("."))this.Component=this.Component[f]}return this.hydrator=p,this.hydrate},e,this)}catch(n){console.error(`[astro-island] Error hydrating ${this.getAttribute("component-url")}`,n)}}attributeChangedCallback(){this.hydrate()}}d(y,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",y)}})();</script><astro-island uid="NWtON" prefix="r1" component-url="/_astro/ThemeScript.C96YaN69.js" component-export="default" renderer-url="/_astro/client.BPIbHqJh.js" props="{&quot;data-astro-cid-sckkx6r4&quot;:[0,true]}" ssr client="load" opts="{&quot;name&quot;:&quot;ThemeClient&quot;,&quot;value&quot;:true}"></astro-island>  <div class="pt-24 flex flex-col items-center min-h-screen overflow-x-hidden"> <div class="md:w-[700px] w-[90%] flex flex-col items-center text-black dark:text-white"> <div class="w-full justify-between bg-none ml-0 md:ml-3 mt-4"> <button id="gobackbutton" class="cursor-pointer bg-neutral-200 hover:bg-neutral-300 dark:bg-neutral-800 dark:hover:bg-neutral-700 p-[6px] rounded-[3px] w-max"> Nazaj</button> </div> <h1 class="font-bold text-4xl text-center mt-5 md:mt-2">Coding Festival</h1> <h2 class="mt-2">Dokumentacija</h2> <h2 class="mt-2">Tehnologije:</h2> <div class="flex flex-row mt-3 flex-wrap md:max-w-[200px] lg:max-w-[300px] justify-center gap-2"> <img class="h-15 w-15 hover:scale-110 transition-all" alt="React" src="/react-svgrepo-com.svg"><img class="h-15 w-15 hover:scale-110 transition-all" src="/js-svgrepo-com.svg"><img class="h-15 w-15 hover:scale-110 transition-all" alt="Tailwind" src="/tailwind-svgrepo-com.svg"> </div> <!-- Add md in react component to make easily to do --> <section class="prose dark:prose-invert mx-auto my-8 w-full max-w-[90vw] overflow-visible"><h1>Coding Festival</h1>
+<p><img src="https://raw.githubusercontent.com/Planeta110/proyect-images/main/coding-festival/demostration.gif" alt="Gif del proyecto"></p>
+<p><a href="https://coding-festival.vercel.app/">https://coding-festival.vercel.app/</a></p>
+<h2>Documentation</h2>
+<h3>| ES |</h3>
+<h2>Info</h2>
+<p>Este proyecto es confines de practicar los estilos de tailwind más, react.
+La pagina va sobre un evento llamado Coding Festival que es un festival de codigo que &quot;ocurre el 15 de abril en zaragoza&quot; (no existe).</p>
+<h2>Instalación</h2>
+<ol>
+<li>Clona el repositorio</li>
+<li>Ejecuta npm install</li>
+<li>Abre tu navegador y accede a <strong>localhost:5173</strong></li>
+</ol>
+<h3>1 Clona el repositorio</h3>
+<p>Ejecuta este comando en tu terminal</p>
+<pre><code class="language-bash">git clone https://github.com/Planeta110/Coding-Festival.git
+</code></pre>
+<h3>2 Ejecución</h3>
+<p>Primero ve al proyecto.</p>
+<pre><code class="language-bash">cd Coding-Festival
+</code></pre>
+<p>Despues instala <em>todas las dependencias</em>.</p>
+<pre><code class="language-bash">npm install
+</code></pre>
+<p>Luego ultimo ejecuta esto</p>
+<pre><code class="language-bash">npm run dev
+</code></pre>
+<p>Y por ultimo abre la web en esta url</p>
+<pre><code class="language-bash">localhost:5173
+</code></pre>
+<h2>Licencia</h2>
+<p>MIT License</p>
+<p>Copyright (c) 2025 Planeta110</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</p>
+<h3>| EN |</h3>
+<h2>Info</h2>
+<p>This project was created to practice styling with Tailwind and using React.
+The page is about a fictional event called Coding Festival, a code festival that &quot;takes place on April 15th in Zaragoza&quot; (it doesn&#39;t actually exist).</p>
+<h2>Instalation</h2>
+<ol>
+<li>Clone the repository</li>
+<li>Run <strong>npm install</strong></li>
+<li>Open your browser at <strong>localhost:5173</strong></li>
+</ol>
+<h3>1 Clone the repository</h3>
+<p>Run this command in your terminal:</p>
+<pre><code class="language-bash">git clone https://github.com/Planeta110/Coding-Festival.git
+</code></pre>
+<h3>2 Run the project</h3>
+<p>First, enter the project directory:</p>
+<pre><code class="language-bash">cd Coding-Festival
+</code></pre>
+<p>Then install all <em>dependencies</em>:</p>
+<pre><code class="language-bash">npm install
+</code></pre>
+<p>Finally, run:</p>
+<pre><code class="language-bash">npm run dev
+</code></pre>
+<p>Then open your browser at:</p>
+<pre><code class="language-bash">localhost:5173
+</code></pre>
+<h2>Licence</h2>
+<p>MIT License</p>
+<p>Copyright (c) 2025 Planeta110</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</p>
+</section> </div> <script type="module">const n=document.getElementById("gobackbutton");n?.addEventListener("click",()=>{const t=window.location.pathname.split("/")[1];window.location.href=`/${t}/`});</script> </div>   <script>
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const savedTheme = localStorage.getItem("theme");
+
+  // Si hay un tema guardado, lo aplica; si no, se ajusta al tema del sistema y lo guarda
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  } else if (savedTheme === "light") {
+    document.documentElement.classList.remove("dark");
+  } else {
+    // Si no hay preferencia guardada, ajusta al sistema y guarda la preferencia
+    if (prefersDark) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }
+
+  // Funciones para cambiar el tema manualmente
+  function setLightMode() {
+    localStorage.setItem("theme", "light");
+    document.documentElement.classList.remove("dark");
+  }
+
+  function setDarkMode() {
+    localStorage.setItem("theme", "dark");
+    document.documentElement.classList.add("dark");
+  }
+
+  function setSystemMode() {
+    localStorage.removeItem("theme");
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
+    if (prefersDark) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }
+</script></body></html>
