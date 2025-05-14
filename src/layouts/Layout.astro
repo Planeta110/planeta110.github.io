@@ -16,12 +16,35 @@ import ThemeClient from "../components/main/ThemeScript";
     <title>{title} | 2025</title>
     <ClientRouter />
 
+    <!-- Open Graph (para Facebook, Discord, etc.) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://planeta110.github.io/" />
+    <meta property="og:title" content="Planeta110 | 2025" />
+    <meta
+      property="og:description"
+      content="Bienvenido al portafolio de Planeta110, un desarrollador web apasionado por crear experiencias digitales modernas, funcionales y atractivas."
+    />
+    <meta property="og:image" content="https://planeta110.github.io/preview.png" />
+    <meta property="og:site_name" content="planeta110" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Planeta110 | 2025" />
+    <meta
+      name="twitter:description"
+      content="Bienvenido al portafolio de Planeta110, un desarrollador web apasionado por crear experiencias digitales modernas, funcionales y atractivas."
+    />
+    <meta name="twitter:image" content="https://planeta110.github.io/preview.png" />
+    <meta name="twitter:site" content="https://planeta110.github.io/" />
+
+    <!-- Tema en navegadores móviles -->
+    <meta name="theme-color" content="#0d0d0d" />
   </head>
   <body
     class="transition-colors duration-300 h-full w-full dark:text-white text-black font-poppins dark:bg-gradient-to-r dark:from-blue-900 dark:to-slate-800 bg-gradient-to-r from-slate-100 to-slate-300"
   >
     <Nav lang={lang} />
-    <ThemeClient client:load/>
+    <ThemeClient client:load />
     <slot />
   </body>
 </html>

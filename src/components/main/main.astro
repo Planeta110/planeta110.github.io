@@ -3,14 +3,14 @@ const { lang } = Astro.props;
 import Contact from "./contact/contact.astro";
 import Proyectos from "./proyectos.astro";
 import Skills from "./skills.jsx";
+import Footers from "./footer/footers.astro";
 ---
 
 <main class="pt-24 flex flex-col items-center h-full pl-2 md:pl-0">
   <div
-  
     class="w-full md:w-[700px] mt-4 md:mt-20 lg:32 lg:w-[1000px] pl-1 md:pl-5 border-l-2 dark:border-white border-black"
   >
-    <h1 class="text-3xl mt-1 md:mt-4 md:text-5xl font-bold " id="h1d">
+    <h1 class="text-3xl mt-1 md:mt-4 md:text-5xl font-bold" id="h1d">
       {lang.main.title}
     </h1>
     <p
@@ -22,13 +22,7 @@ import Skills from "./skills.jsx";
     <Contact lang={lang} />
     <div class="mt-[200px]"></div>
   </div>
-  <p class="text-center max-w-[420px]">
-    Non resposability for Planeta110 for copyright or images used
-  </p>
-  <p class="text-center max-w-[420px]">
-    Muchas de las imágenes provienen de SVG Repo, y en teoría son de uso
-    público.
-  </p>
+  <Footers />
 </main>
 
 <style></style>
