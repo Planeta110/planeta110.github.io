@@ -12,4 +12,6 @@ export default defineConfig({
   },
 
   integrations: [react()],
+  site: "planeta110.github.io",
+  base: "planeta110.github.io"
 });
