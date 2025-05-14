@@ -1,3 +1,5 @@
 {
-    "editor.bracketPairColorization.independentColorPoolPerBracketType": false
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": "active"
 }
