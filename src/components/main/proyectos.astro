@@ -16,7 +16,12 @@ const jsons = {
 ---
 
 <h1 class="md:mt-14 mt-5 lg:mt-20">{lang.main.proyectos.title}</h1>
-<div class="flex flex-col items-center w-full" id="proyects">
+<div
+  class="flex flex-col items-center w-full"
+  id="proyects"
+  data-aos="fade-down"
+  data-aos-delay="300"
+>
   <div
     class="flex rounded-[8px] flex-col w-full lg:grid lg:grid-cols-3 grid-rows-6 gap-4 p-1 md:p-2 lg:p-3"
   >
@@ -32,9 +37,9 @@ const jsons = {
       </div>
     </div>
     <div
-      class="hidden md:flex flex-col  justify-center  md:p-2 rounded-[8px] row-span-6 col-start-3 dark:bg-slate-800 bg-neutral-600"
+      class="hidden md:flex flex-col justify-center md:p-2 rounded-[8px] row-span-6 col-start-3 dark:bg-slate-800 bg-neutral-600"
     >
-      <Demostration client:load/>
+      <Demostration client:load />
     </div>
   </div>
 </div>

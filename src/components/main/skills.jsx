@@ -1,6 +1,10 @@
 import Ventoskills from "./ventoskills";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function Skills({ lang }) {
+
   const skills = lang.main.skills;
   const skillskillsfrontend = [
     { techno: "JS", routeimg: "/js-svgrepo-com.svg" },
@@ -25,7 +29,10 @@ export default function Skills({ lang }) {
           <h1>Frontend and Frameworks</h1>
           <div className="flex  flex-row flex-wrap gap-3 max-w-[400px] md:mt-8 mt-2">
             {skillskillsfrontend.map((item, key) => (
-              <div className="relative h-20 w-20 group  hover:scale-110 transition-all" key={key}>
+              <div
+                className="relative h-20 w-20 group  hover:scale-110 transition-all"
+                key={key}
+              >
                 <img
                   id="image1"
                   src={item.routeimg}
@@ -41,7 +48,10 @@ export default function Skills({ lang }) {
           <h1>Backend</h1>
           <div className="flex  flex-row flex-wrap gap-3 max-w-[400px] md:mt-8 mt-2">
             {skillskillsbackend.map((item, key) => (
-              <div className="relative group h-20 w-20 hover:scale-110 transition-all" key={key}>
+              <div
+                className="relative group h-20 w-20 hover:scale-110 transition-all"
+                key={key}
+              >
                 <img
                   id="image2"
                   src={item.routeimg}

@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function Contacts() {
   const [Urlnow, setUrlnow] = useState("");
@@ -13,6 +15,7 @@ export default function Contacts() {
   }
   useEffect(() => {
     setUrlnow(window.location.href);
+
   }, []);
 
   const handleFileChange = (event) => {
@@ -40,12 +43,12 @@ export default function Contacts() {
 
   return (
     <form
+
       action="https://formsubmit.co/htmljscssprogram@gmail.com"
       method="POST"
       onSubmit={(e) => {
-       // e.preventDefault();
+        // e.preventDefault();
         // Aquí validas y haces lo que quieras (fetch, alert, etc)
-
 
         setWarningMessage(true);
         setWarnmessage("Sent successfully");
